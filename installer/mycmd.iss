@@ -1,19 +1,14 @@
 [Setup]
-AppName=MyCMD
+AppName=MyCMD-GUI
 AppVersion=1.0
-DefaultDirName={pf}\MyCMD
-DefaultGroupName=MyCMD
-OutputBaseFilename=MyCMD-Installer
-SetupIconFile=icons\mycmd.ico
+DefaultDirName={pf}\MyCMD-GUI
+OutputDir=dist
+OutputBaseFilename=MyCMD-Setup
+SetupIconFile=icon.ico
 
 [Files]
-Source: "dist\bin\MyCMD.exe"; DestDir: "{app}\bin"
-Source: "dist\lib\dependencies.jar"; DestDir: "{app}\lib"
-Source: "dist\icons\mycmd.ico"; DestDir: "{app}\icons"
+Source: "target\MyCMD-GUI-1.0-SNAPSHOT.jar"; DestDir: "{app}"
+Source: "MyCMD.bat"; DestDir: "{app}"
 
 [Icons]
-Name: "{group}\MyCMD"; Filename: "{app}\bin\MyCMD.exe"
-Name: "{commondesktop}\MyCMD"; Filename: "{app}\bin\MyCMD.exe"
-
-[Run]
-Filename: "{app}\bin\MyCMD.exe"; Description: "Launch MyCMD"; Flags: nowait postinstall skipifsilent
+Name: "{group}\MyCMD"; Filename: "{app}\MyCMD.bat"
